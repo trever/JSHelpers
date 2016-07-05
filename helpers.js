@@ -110,16 +110,12 @@ Object.defineProperties(Array.prototype, {
 				var filterKeys = Object.keys(filter);
 				filterKeys.forEach(function(key){
 					var splitKey = key.split('.');
-					// console.log(splitKey);
 					var recursion = a;
 					splitKey.forEach(function(keyPart){
 						if (recursion && recursion[keyPart] !== (undefined || null)){
 							recursion = recursion[keyPart];
-							// console.log(recursion);
 						};
 					});
-					// console.log("RECUR", recursion);
-					// console.log("FILTER", filter[key]);
 					if (recursion !== (undefined || null) && recursion.toString().toLowerCase().indexOf(filter[key].toString().toLowerCase()) > -1){
 						if (ind){
 							oo.push(index)
@@ -149,12 +145,10 @@ Object.defineProperties(Array.prototype, {
 				var filterKeys = Object.keys(filter);
 				filterKeys.forEach(function(key){
 					var splitKey = key.split('.');
-					// console.log(splitKey);
 					var recursion = a;
 					splitKey.forEach(function(keyPart){
 						if (recursion && recursion[keyPart] !== (undefined || null)){
 							recursion = recursion[keyPart];
-							// console.log(recursion);
 						};
 					});
 					if (recursion !== (undefined || null) && recursion === filter[key]){
